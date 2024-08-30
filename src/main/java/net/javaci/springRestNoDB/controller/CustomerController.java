@@ -1,6 +1,5 @@
 package net.javaci.springRestNoDB.controller;
 
-import lombok.extern.slf4j.Slf4j;
 import net.javaci.springRestNoDB.model.Customer;
 import net.javaci.springRestNoDB.service.CustomerService;
 import net.javaci.springRestNoDB.util.CustomerSortingOptions;
@@ -11,7 +10,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.UUID;
 
-@Slf4j
 @RestController
 @RequestMapping("/customers")
 public class CustomerController {
@@ -22,7 +20,6 @@ public class CustomerController {
     @GetMapping()
     public ResponseEntity<List<Customer>> getAllCustomers(@RequestParam(value = "sortField", defaultValue = "ID") CustomerSortingOptions.SortField sortField,
                                                           @RequestParam(value = "sortingOrder", defaultValue = "ASCENDING") CustomerSortingOptions.SortingOrder sortingOrder) {
-        // log.info("getAllCustomers is called in Controller");
         return ResponseEntity.ok(customerService.getAllPersons(new CustomerSortingOptions(sortingOrder, sortField)));
     }
 

@@ -1,6 +1,5 @@
 package net.javaci.springRestNoDB.service;
 
-import lombok.extern.slf4j.Slf4j;
 import net.javaci.springRestNoDB.model.Customer;
 import net.javaci.springRestNoDB.repository.CustomerRepository;
 import net.javaci.springRestNoDB.util.CustomerSortingOptions;
@@ -13,7 +12,6 @@ import java.util.UUID;
 
 import static net.javaci.springRestNoDB.util.CustomerSortingOptions.SortingOrder.ASCENDING;
 
-@Slf4j
 @Service
 public class CustomerService {
 
@@ -21,7 +19,6 @@ public class CustomerService {
     private CustomerRepository repository;
 
     public List<Customer> getAllPersons(CustomerSortingOptions sortingOptions) {
-        // log.info("getAllCustomers is called in Service");
         List<Customer> customers = repository.getAllPersons(sortingOptions);
 
         if (sortingOptions == null) {

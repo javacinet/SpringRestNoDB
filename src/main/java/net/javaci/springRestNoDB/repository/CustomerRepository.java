@@ -1,6 +1,5 @@
 package net.javaci.springRestNoDB.repository;
 
-import lombok.extern.slf4j.Slf4j;
 import net.javaci.springRestNoDB.model.Customer;
 import net.javaci.springRestNoDB.util.CustomerSortingOptions;
 import org.springframework.stereotype.Component;
@@ -9,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-@Slf4j
 @Component
 public class CustomerRepository {
     private final List<Customer> customers;
@@ -19,7 +17,6 @@ public class CustomerRepository {
     }
 
     public List<Customer> getAllPersons(CustomerSortingOptions sortingOptions) {
-        // log.info("getAllCustomers is called in Repository");
         return new ArrayList<>(customers);
     }
 
